@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\references\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>SpectralAwokenReborn</AssemblyName>
+    <TargetFramework>net45</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <Target Name="BuildMod" AfterTargets="Build">
+    <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define &quot;$(DefineConstants)&quot; -unsafe $(AllowUnsafeBlocks)" />
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Items\Materials\Mob Dropped\" />
+    <Folder Include="Items\Materials\Boss Dropped\" />
+    <Folder Include="Items\Materials\Naturally Found\" />
+    <Folder Include="Items\Materials\NPC Sold\" />
+    <Folder Include="Items\Tools\Axe\" />
+    <Folder Include="Items\Tools\Hammer\" />
+    <Folder Include="Items\Tools\Multitool\" />
+    <Folder Include="Items\Weapons\Mana\" />
+    <Folder Include="Items\Weapons\Throwing\" />
+    <Folder Include="Items\Weapons\Summon\" />
+    <Folder Include="Items\Weapons\Ranged\" />
+  </ItemGroup>
+</Project>
